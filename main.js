@@ -381,6 +381,124 @@
     }, duration);
   }
 
+  /* Book purchase configuration + static-site mailto workflow */
+  const siteConfig = {
+    brandName: '퀀트공방',
+    email: 'betterpsh@gmail.com',
+    kakaoUrl: 'https://open.kakao.com/o/glUMmmwi'
+  };
+
+  async function copyTextToClipboard(text, successMessage) {
+    try {
+      await navigator.clipboard.writeText(text);
+      showToast(successMessage, '복사');
+    } catch {
+      const fallback = document.createElement('textarea');
+      fallback.value = text;
+      fallback.setAttribute('readonly', '');
+      fallback.style.position = 'fixed';
+      fallback.style.opacity = '0';
+      document.body.appendChild(fallback);
+      fallback.select();
+      document.execCommand('copy');
+      fallback.remove();
+      showToast(successMessage, '복사');
+    }
+  }
+
+  const purchaseForm = document.getElementById('book-purchase-form');
+  const purchaseProduct = document.getElementById('purchase-product');
+  const depositAmount = document.getElementById('deposit-amount');
+
+  function syncPurchaseAmount() {
+    if (!(purchaseProduct instanceof HTMLSelectElement) || !(depositAmount instanceof HTMLInputElement)) return;
+    const raw = purchaseProduct.value;
+    const [, price] = raw.split('|');
+    depositAmount.value = price && Number(price) > 0
+      ? Number(price).toLocaleString('ko-KR') + '원'
+      : raw
+        ? '결제 안내 개별 요청'
+        : '';
+  }
+
+  function getPurchaseFormData(form) {
+    const data = new FormData(form);
+    const [productName, productPrice] = String(data.get('purchaseProduct') || '').split('|');
+
+    return {
+      productName,
+      productPrice,
+      buyerName: data.get('buyerName'),
+      buyerEmail: data.get('buyerEmail'),
+      buyerContact: data.get('buyerContact'),
+      depositorName: data.get('depositorName'),
+      depositAmount: data.get('depositAmount'),
+      depositTime: data.get('depositTime') || '미입력',
+      agreePrivacy: data.get('agreePrivacy') ? '동의' : '미동의',
+      agreeRefund: data.get('agreeRefund') ? '동의' : '미동의',
+      agreeRisk: data.get('agreeRisk') ? '확인' : '미확인'
+    };
+  }
+
+  function buildPurchaseEmailBody(formData) {
+    const productPrice = Number(formData.productPrice || 0);
+    return [
+      '[퀀트공방 책자 구매 신청]',
+      '',
+      `구매 상품: ${formData.productName}`,
+      `상품 금액: ${productPrice.toLocaleString('ko-KR')}원`,
+      `신청자명: ${formData.buyerName}`,
+      `자료 수령 이메일: ${formData.buyerEmail}`,
+      `연락처/카카오톡 ID: ${formData.buyerContact}`,
+      `입금자명: ${formData.depositorName}`,
+      `입금 예정 금액: ${formData.depositAmount}`,
+      `입금 안내 요청 메모: ${formData.depositTime}`,
+      '',
+      '[동의 확인]',
+      `개인정보 수집 및 이용: ${formData.agreePrivacy}`,
+      `전자책 환불 안내: ${formData.agreeRefund}`,
+      `투자 위험 고지: ${formData.agreeRisk}`,
+      '',
+      '[입금 안내 요청]',
+      '구매 신청 확인 후 입금 방법을 안내받겠습니다.',
+      '',
+      '입금 안내 부탁드립니다.'
+    ].join('\n');
+  }
+
+  purchaseProduct?.addEventListener('change', syncPurchaseAmount);
+  syncPurchaseAmount();
+
+  document.querySelectorAll('[data-product]').forEach(button => {
+    button.addEventListener('click', () => {
+      const product = button.dataset.product;
+      if (!(purchaseProduct instanceof HTMLSelectElement) || !product) return;
+      const targetOption = [...purchaseProduct.options].find(option => option.textContent.includes(product));
+      if (targetOption) {
+        purchaseProduct.value = targetOption.value;
+        purchaseProduct.dispatchEvent(new Event('change'));
+        showToast(`${product} 상품을 선택했습니다`, '책자');
+      }
+    });
+  });
+
+  purchaseForm?.addEventListener('submit', event => {
+    event.preventDefault();
+    if (!purchaseForm.reportValidity()) return;
+
+    const formData = getPurchaseFormData(purchaseForm);
+    const subject = `[퀀트공방] 책자 구매 신청 - ${formData.productName} / ${formData.buyerName}`;
+    const body = buildPurchaseEmailBody(formData);
+    window.location.href = `mailto:${siteConfig.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    showToast('이메일 앱을 열었습니다. 전송 후 입금 안내를 받아주세요.', '구매');
+  });
+
+  document.getElementById('purchase-copy-btn')?.addEventListener('click', () => {
+    if (!purchaseForm || !purchaseForm.reportValidity()) return;
+    const body = buildPurchaseEmailBody(getPurchaseFormData(purchaseForm));
+    copyTextToClipboard(body, '구매 신청 내용을 복사했습니다');
+  });
+
   /* Consultation brief form */
   const consultationForm = document.getElementById('consultation-form');
   const consultCopyBtn = document.getElementById('consult-copy-btn');
