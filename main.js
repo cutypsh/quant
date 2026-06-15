@@ -406,6 +406,35 @@
     }
   }
 
+  function buildMailtoUrl(to, subject, body) {
+    return `mailto:${to}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+  }
+
+  function buildGmailComposeUrl(to, subject, body) {
+    const params = new URLSearchParams({
+      view: 'cm',
+      fs: '1',
+      to,
+      su: subject,
+      body
+    });
+    return `https://mail.google.com/mail/?${params.toString()}`;
+  }
+
+  function openEmailCompose({ to = siteConfig.email, subject, body, toastTitle = '메일' }) {
+    const gmailUrl = buildGmailComposeUrl(to, subject, body);
+    const opened = window.open(gmailUrl, '_blank');
+
+    if (opened) {
+      opened.opener = null;
+      showToast('Gmail 작성창을 열었습니다. 내용을 확인한 뒤 전송 버튼을 눌러주세요.', toastTitle);
+      return;
+    }
+
+    window.location.href = buildMailtoUrl(to, subject, body);
+    showToast('이메일 앱을 열었습니다. 내용을 확인한 뒤 전송 버튼을 눌러주세요.', toastTitle);
+  }
+
   const purchaseForm = document.getElementById('book-purchase-form');
   const purchaseProduct = document.getElementById('purchase-product');
   const depositAmount = document.getElementById('deposit-amount');
@@ -489,8 +518,7 @@
     const formData = getPurchaseFormData(purchaseForm);
     const subject = `[퀀트공방] 책자 구매 신청 - ${formData.productName} / ${formData.buyerName}`;
     const body = buildPurchaseEmailBody(formData);
-    window.location.href = `mailto:${siteConfig.email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    showToast('이메일 앱을 열었습니다. 전송 후 입금 안내를 받아주세요.', '구매');
+    openEmailCompose({ subject, body, toastTitle: '구매' });
   });
 
   document.getElementById('purchase-copy-btn')?.addEventListener('click', () => {
@@ -986,8 +1014,7 @@
     const formData = new FormData(consultationForm);
     const subject = `[퀀트공방 무료진단 신청] ${formData.get('market')} / ${formData.get('primaryGoal')}`;
     const body = getConsultationMessage();
-    window.location.href = `mailto:betterpsh@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    showToast('무료진단 신청 내용이 이메일 본문으로 정리됩니다', '메일');
+    openEmailCompose({ subject, body, toastTitle: '진단' });
   });
 
   consultCopyBtn?.addEventListener('click', async () => {
@@ -1065,7 +1092,7 @@
     showToast('상담 섹션으로 이동합니다', '상담');
   });
   document.getElementById('cta-email-btn')?.addEventListener('click', () => {
-    showToast('betterpsh@gmail.com으로 이메일 앱을 엽니다', '메일');
+    showToast('Gmail 작성창을 엽니다. 내용을 확인한 뒤 전송 버튼을 눌러주세요.', '메일');
   });
   document.getElementById('cta-phone-btn')?.addEventListener('click', () => {
     showToast('010-4752-8421로 전화 앱을 엽니다', '전화');
@@ -1074,7 +1101,7 @@
     showToast('카카오톡 오픈채팅으로 연결합니다', '톡');
   });
   document.getElementById('quick-email-btn')?.addEventListener('click', () => {
-    showToast('betterpsh@gmail.com으로 이메일 앱을 엽니다', '메일');
+    showToast('Gmail 작성창을 엽니다. 내용을 확인한 뒤 전송 버튼을 눌러주세요.', '메일');
   });
   document.getElementById('quick-kakao-btn')?.addEventListener('click', () => {
     showToast('카카오톡 오픈채팅으로 연결합니다', '톡');
