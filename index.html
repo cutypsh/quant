@@ -4,21 +4,21 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>퀀트공방 | 업비트·빗썸·한국투자증권·키움증권 자동매매 셀프 제작 가이드</title>
-  <meta name="description" content="퀀트공방은 업비트, 빗썸, 한국투자증권, 키움증권 REST API와 WebSocket 자동매매 흐름을 PDF 책자로 직접 이해할 수 있게 돕습니다. 막히면 질문권·원격지원·제작 의뢰로 확장할 수 있습니다. 투자 수익을 보장하지 않습니다." />
-  <meta name="keywords" content="퀀트공방, 업비트 자동매매 책자, 빗썸 자동매매 책자, 한국투자증권 API, 키움증권 API, REST API, WebSocket, 파이썬 자동매매, 자동매매 셀프 제작, 조건 알림, 주문 보조" />
+  <meta name="description" content="퀀트공방은 업비트, 빗썸, 한국투자증권, 키움증권 REST API와 WebSocket 자동매매 흐름을 PDF 책으로 직접 이해할 수 있게 돕습니다. 막히면 질문권·원격지원·제작 의뢰로 확장할 수 있습니다. 투자 수익을 보장하지 않습니다." />
+  <meta name="keywords" content="퀀트공방, 업비트 자동매매 전자책, 빗썸 자동매매 전자책, 한국투자증권 API, 키움증권 API, REST API, WebSocket, 파이썬 자동매매, 자동매매 셀프 제작, 조건 알림, 주문 보조" />
   <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
   <meta name="author" content="퀀트공방" />
   <meta name="theme-color" content="#2563eb" />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="ko_KR" />
   <meta property="og:site_name" content="퀀트공방" />
-  <meta property="og:title" content="퀀트공방 | 자동매매를 먼저 직접 만들어보세요" />
-  <meta property="og:description" content="업비트·빗썸·한국투자증권·키움증권 자동매매 책자 시리즈. REST API와 WebSocket 흐름을 PDF 책자로 먼저 이해하세요." />
+  <meta property="og:title" content="퀀트공방 | 자동매매를 이젠 직접 만들어보세요" />
+  <meta property="og:description" content="업비트·빗썸·한국투자증권·키움증권 자동매매 전자책 시리즈. REST API와 WebSocket 흐름을 PDF 책으로 이해하세요." />
   <meta property="og:image" content="./asset/CI.png" />
   <meta property="og:image:alt" content="퀀트공방" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="퀀트공방 | 자동매매를 먼저 직접 만들어보세요" />
-  <meta name="twitter:description" content="업비트·빗썸·한국투자증권·키움증권 자동매매 책자 시리즈. REST API와 WebSocket 흐름을 PDF 책자로 먼저 이해하세요." />
+  <meta name="twitter:title" content="퀀트공방 | 자동매매를 이젠 직접 만들어보세요" />
+  <meta name="twitter:description" content="업비트·빗썸·한국투자증권·키움증권 자동매매 전자책 시리즈. REST API와 WebSocket 흐름을 PDF 책으로 이해하세요." />
   <meta name="twitter:image" content="./asset/CI.png" />
   <link rel="icon" href="./asset/CI.png" type="image/png" />
   <script type="application/ld+json">
@@ -55,7 +55,7 @@
           "@type": "Product",
           "@id": "#upbit-book",
           "name": "자동매매 셀프 제작 가이드 4권 시리즈",
-          "description": "업비트, 빗썸, 한국투자증권, 키움증권 REST API와 WebSocket 자동매매 흐름을 직접 이해할 수 있게 정리한 PDF 책자 시리즈입니다.",
+          "description": "업비트, 빗썸, 한국투자증권, 키움증권 REST API와 WebSocket 자동매매 흐름을 직접 이해할 수 있게 정리한 PDF 전자책 시리즈입니다.",
           "brand": {
             "@type": "Brand",
             "name": "퀀트공방"
@@ -82,7 +82,7 @@
   <div class="mobile-drawer" id="mobile-drawer" aria-hidden="true">
     <div class="drawer-overlay" id="drawer-overlay"></div>
     <nav class="drawer-panel" aria-label="모바일 메뉴">
-      <a href="#books" class="drawer-link">책자 소개</a>
+      <a href="#books" class="drawer-link">전자책 소개</a>
       <a href="#purchase-flow" class="drawer-link">구매 방법</a>
       <a href="#support" class="drawer-link">질문·지원</a>
       <a href="#custom-build" class="drawer-link">제작 의뢰</a>
@@ -104,7 +104,7 @@
       </a>
 
       <nav class="nav-menu mq-nav-menu" aria-label="주요 메뉴" id="nav-menu">
-        <a href="#books">책자 소개</a>
+        <a href="#books">전자책 소개</a>
         <a href="#purchase-flow">구매 방법</a>
         <a href="#support">질문·지원</a>
         <a href="#custom-build">제작 의뢰</a>
@@ -113,7 +113,7 @@
       </nav>
 
       <div class="mq-nav-right">
-        <a href="#purchase-form" class="nav-cta mq-nav-cta" id="nav-cta-btn">책자 구매</a>
+        <a href="#purchase-form" class="nav-cta mq-nav-cta" id="nav-cta-btn">전자책 구매</a>
         <button class="hamburger" id="hamburger" aria-expanded="false" aria-controls="mobile-drawer" aria-label="메뉴 열기">
           <span></span>
           <span></span>
@@ -133,18 +133,18 @@
           </div>
           <h1 id="hero-h1">
             <span>자동매매,</span>
-            <span>먼저 <strong class="qw-typewriter-text">직접 만들어보세요.</strong></span>
+            <span>이젠 <strong class="qw-typewriter-text">직접 만들어보세요.</strong></span>
           </h1>
           <p class="qw-hero-desc">
-            업비트·빗썸·한국투자증권·키움증권 자동매매 흐름을 PDF 책자로 먼저 이해할 수 있습니다.
+            업비트·빗썸·한국투자증권·키움증권 자동매매 흐름을 PDF 책으로 이해할 수 있습니다.
             혼자 하다 막히면 질문하고, 실전용이 필요하면 퀀트공방이 제작해드립니다.
           </p>
           <div class="qw-hero-actions">
-            <a href="#books" class="mq-btn mq-btn-primary" id="hero-book-cta">책자 시리즈 보기 <span aria-hidden="true">→</span></a>
+            <a href="#books" class="mq-btn mq-btn-primary" id="hero-book-cta">전자책 시리즈 보기 <span aria-hidden="true">→</span></a>
             <a href="#custom-build" class="mq-btn mq-btn-secondary" id="hero-build-cta">제작 의뢰 상담하기</a>
           </div>
           <div class="qw-price-chip">
-            <span>책자 4권</span>
+            <span>전자책 4권</span>
             <strong>업비트 · 빗썸 · 한국투자증권 · 키움증권</strong>
           </div>
           <p class="qw-hero-note">
@@ -154,10 +154,10 @@
           </p>
         </div>
 
-        <aside class="qw-offer-card reveal reveal-delay-1" aria-label="자동매매 책자 4권 시리즈">
-          <p class="qw-offer-kicker">책자 시리즈</p>
+        <aside class="qw-offer-card reveal reveal-delay-1" aria-label="자동매매 전자책 4권 시리즈">
+          <p class="qw-offer-kicker">전자책 시리즈</p>
           <h2>자동매매 셀프 제작<br />가이드 4권</h2>
-          <div class="qw-book-showcase" aria-label="업비트, 빗썸, 한국투자증권, 키움증권 자동매매 책자">
+          <div class="qw-book-showcase" aria-label="업비트, 빗썸, 한국투자증권, 키움증권 자동매매 전자책">
             <div class="qw-mini-book-grid">
               <article class="qw-mini-book qw-mini-book-coin">
                 <span>01</span>
@@ -181,19 +181,19 @@
               </article>
             </div>
             <div class="qw-api-ribbon">
-              <span>PDF 책자</span>
+              <span>PDF 전자책</span>
               <span>자동매매 구조</span>
               <span>질문 지원</span>
             </div>
           </div>
           <ul>
-            <li>PDF 책자</li>
+            <li>PDF 전자책</li>
             <li>4개 거래소·증권사 자동매매 흐름 설명</li>
             <li>구매 신청 후 개별 입금 안내</li>
             <li>막히면 질문권·원격지원 이용 가능</li>
           </ul>
           <div class="qw-offer-price">
-            <span>책자 시리즈</span>
+            <span>전자책 시리즈</span>
             <strong>19,000원부터</strong>
           </div>
           <a href="#books" class="mq-btn mq-btn-primary">4권 구성 보기</a>
@@ -206,19 +206,19 @@
         <div class="mq-section-head reveal">
           <p class="mq-section-label">Start</p>
           <h2>나에게 맞는 시작 방법을 선택하세요</h2>
-          <p>먼저 직접 따라 해보고, 필요한 순간에 질문 지원이나 제작 의뢰로 확장할 수 있습니다.</p>
+          <p>직접 따라 해보고, 필요한 순간에 질문 지원이나 제작 의뢰로 확장할 수 있습니다.</p>
         </div>
         <div class="qw-start-grid reveal reveal-delay-1">
           <article class="qw-start-card qw-start-card-self">
             <span class="qw-card-label">셀프 제작</span>
-            <h3>책자로 먼저 구조 이해하기</h3>
-            <p>업비트, 빗썸, 한국투자증권, 키움증권의 REST API와 WebSocket 자동매매 흐름을 책자로 이해합니다.</p>
+            <h3>책으로 구조 이해하기</h3>
+            <p>업비트, 빗썸, 한국투자증권, 키움증권의 REST API와 WebSocket 자동매매 흐름을 책으로 이해합니다.</p>
             <ul>
-              <li>거래소·증권사별 PDF 책자 4권 구성</li>
-              <li>책자 중심 구성, 별도 실습 파일 미제공</li>
+              <li>거래소·증권사별 PDF 전자책 4권 구성</li>
+              <li>전자책 중심 구성, 별도 실습 파일 미제공</li>
               <li>입금 확인 후 이메일 발송</li>
             </ul>
-            <a href="#books" class="mq-btn mq-btn-primary">책자 보기</a>
+            <a href="#books" class="mq-btn mq-btn-primary">전자책 보기</a>
           </article>
           <article class="qw-start-card qw-start-card-build">
             <span class="qw-card-label">제작 의뢰</span>
@@ -239,8 +239,8 @@
       <div class="mq-container">
         <div class="mq-section-head reveal">
           <p class="mq-section-label">Problem</p>
-          <h2>책자에서 먼저 정리할 문제</h2>
-          <p>장중 매매 시간, 시장 감시, 기준 유지, 뇌동매매 문제를 먼저 확인하고 내 자동매매 기준을 정리합니다.</p>
+          <h2>전자책에서 정리할 문제</h2>
+          <p>장중 매매 시간, 시장 감시, 기준 유지, 뇌동매매 문제를 확인하고 내 자동매매 기준을 정리합니다.</p>
         </div>
         <figure class="qw-wide-image-card reveal reveal-delay-1">
           <img src="./asset/card.png" alt="투자자가 자주 겪는 네 가지 문제" loading="lazy" decoding="async" />
@@ -252,10 +252,10 @@
       <div class="mq-container qw-guide-preview-grid">
         <div class="qw-guide-preview-copy reveal">
           <p class="mq-section-label">Guide Preview</p>
-          <h2>책자에서 이런 흐름을 다룹니다</h2>
+          <h2>전자책에서 이런 흐름을 다룹니다</h2>
           <p>
-            책자는 복잡한 개발 문서가 아니라, 투자자가 이해하기 쉬운 순서로 자동매매 구조를 설명합니다.
-            조건을 어떻게 정리하고, 감시와 알림이 어떤 흐름으로 이어지는지 먼저 볼 수 있습니다.
+            전자책은 복잡한 개발 문서가 아니라, 투자자가 이해하기 쉬운 순서로 자동매매 구조를 설명합니다.
+            조건을 어떻게 정리하고, 감시와 알림이 어떤 흐름으로 이어지는지 볼 수 있습니다.
           </p>
           <div class="qw-guide-points">
             <span>조건 정리</span>
@@ -287,9 +287,9 @@
       <div class="mq-container">
         <div class="mq-section-head reveal">
           <p class="mq-section-label">Book</p>
-          <h2>자동매매 셀프 제작 책자</h2>
+          <h2>자동매매 셀프 제작 전자책</h2>
           <p>
-            처음부터 제작을 맡기기 부담스럽다면, 책자로 먼저 구조를 이해해보세요.
+            처음부터 제작을 맡기기 부담스럽다면, 책으로 구조를 이해해보세요.
             업비트, 빗썸, 한국투자증권, 키움증권 자동매매 흐름을 각각 분리해 정리합니다.
           </p>
         </div>
@@ -300,10 +300,10 @@
               <span class="qw-book-badge">01</span>
               <h3>업비트 자동매매 셀프 제작 가이드</h3>
             </div>
-            <p>업비트 REST API와 WebSocket을 활용한 시세 조회, 조건 감시, 주문 흐름을 정리한 책자입니다.</p>
+            <p>업비트 REST API와 WebSocket을 활용한 시세 조회, 조건 감시, 주문 흐름을 정리한 전자책입니다.</p>
             <div class="qw-book-price"><strong>19,000원부터</strong></div>
             <ul>
-              <li>PDF 책자 제공</li>
+              <li>PDF 전자책 제공</li>
               <li>REST API 기본 흐름 설명</li>
               <li>WebSocket 시세 감시 구조</li>
               <li>수익 보장·종목 추천 없음</li>
@@ -316,10 +316,10 @@
               <span class="qw-book-badge">02</span>
               <h3>빗썸 자동매매 셀프 제작 가이드</h3>
             </div>
-            <p>빗썸 REST API와 WebSocket 기반으로 코인 시세 감시와 조건 실행 구조를 이해하는 책자입니다.</p>
+            <p>빗썸 REST API와 WebSocket 기반으로 코인 시세 감시와 조건 실행 구조를 이해하는 전자책입니다.</p>
             <div class="qw-book-price"><strong>19,000원부터</strong></div>
             <ul>
-              <li>PDF 책자 제공</li>
+              <li>PDF 전자책 제공</li>
               <li>REST API 인증 흐름 설명</li>
               <li>WebSocket 실시간 감시 구조</li>
               <li>수익 보장·종목 추천 없음</li>
@@ -332,10 +332,10 @@
               <span class="qw-book-badge">03</span>
               <h3>한국투자증권 자동매매 셀프 제작 가이드</h3>
             </div>
-            <p>한국투자증권 API 신청, 인증, 시세 조회, 국내주식 주문 보조 흐름을 다루는 책자입니다.</p>
+            <p>한국투자증권 API 신청, 인증, 시세 조회, 국내주식 주문 보조 흐름을 다루는 전자책입니다.</p>
             <div class="qw-book-price"><strong>29,000원부터</strong></div>
             <ul>
-              <li>PDF 책자 제공</li>
+              <li>PDF 전자책 제공</li>
               <li>REST API 인증 흐름 설명</li>
               <li>국내주식 조건 감시 구조</li>
               <li>수익 보장·종목 추천 없음</li>
@@ -348,10 +348,10 @@
               <span class="qw-book-badge">04</span>
               <h3>키움증권 자동매매 셀프 제작 가이드</h3>
             </div>
-            <p>키움증권 조건검색식, 시세 조회, 국내주식 자동화 흐름을 투자자가 이해하기 쉽게 정리한 책자입니다.</p>
+            <p>키움증권 조건검색식, 시세 조회, 국내주식 자동화 흐름을 투자자가 이해하기 쉽게 정리한 전자책입니다.</p>
             <div class="qw-book-price"><strong>29,000원부터</strong></div>
             <ul>
-              <li>PDF 책자 제공</li>
+              <li>PDF 전자책 제공</li>
               <li>조건검색식 연동 흐름 설명</li>
               <li>실시간 감시 구조 설명</li>
               <li>수익 보장·종목 추천 없음</li>
@@ -382,7 +382,7 @@
         </div>
 
         <div class="qw-purchase-steps reveal reveal-delay-1">
-          <article><span>01</span><h3>상품 선택</h3><p>원하는 책자 상품을 선택하고 구매 신청서를 작성합니다.</p></article>
+          <article><span>01</span><h3>상품 선택</h3><p>원하는 전자책 상품을 선택하고 구매 신청서를 작성합니다.</p></article>
           <article><span>02</span><h3>입금 안내 받기</h3><p>신청 내용을 확인한 뒤 이메일 또는 카카오톡으로 입금 방법을 개별 안내드립니다.</p></article>
           <article><span>03</span><h3>입금 후 확인</h3><p>안내받은 방법으로 입금한 뒤 입금자명과 신청 정보를 확인합니다.</p></article>
           <article><span>04</span><h3>이메일 발송</h3><p>확인 후 입력하신 이메일로 PDF 또는 다운로드 링크를 보내드립니다.</p></article>
@@ -424,10 +424,12 @@
         <div class="qw-form-layout">
           <div class="qw-form-copy reveal">
             <p class="mq-section-label">Order</p>
-            <h2>책자 구매 신청</h2>
+            <h2>전자책 구매 신청</h2>
             <p>
-              서버에 개인정보를 저장하지 않습니다. 신청 내용을 Gmail 작성창 또는 이메일 앱으로 열어 보내는 방식입니다.
-              작성창에서 전송 후 안내받은 입금 방법에 따라 진행해 주세요.
+              구매 신청 버튼을 누르면 신청 내용이 입력된 이메일 작성 화면이 열립니다.
+              내용을 확인한 뒤 전송해 주세요.
+              입금 방법은 이메일 안내에 따라 진행하시면 되며,
+              입금 확인 후 PDF 가이드 또는 다운로드 링크를 발송드립니다.
             </p>
           </div>
 
@@ -498,13 +500,13 @@
           <p class="mq-section-label">Support</p>
           <h2>직접 만들다가 막히면 도움받으세요</h2>
           <p>
-            책자 내용, 파이썬 설치, 가상환경 구성, 개발환경 세팅과 오류 화면 확인에 한해 질문권과 원격 설치 지원을 제공합니다.
+            전자책 내용, 파이썬 설치, 가상환경 구성, 개발환경 세팅과 오류 화면 확인에 한해 질문권과 원격 설치 지원을 제공합니다.
             개별 투자 판단, 종목 추천, 수익성 검토는 포함하지 않습니다.
           </p>
         </div>
 
         <div class="qw-support-grid reveal reveal-delay-1">
-          <article><h3>기본 질문 1건</h3><p>책자 내용 관련 단문 질문에 답변합니다.</p><strong>9,900원</strong></article>
+          <article><h3>기본 질문 1건</h3><p>전자책 내용 관련 단문 질문에 답변합니다.</p><strong>9,900원</strong></article>
           <article><h3>질문권 3건</h3><p>오류 캡처 확인과 실행 방향 안내를 받을 수 있습니다.</p><strong>24,000원</strong></article>
           <article><h3>질문권 5건</h3><p>반복 문의가 예상되는 경우 적합합니다.</p><strong>39,000원</strong></article>
           <article><h3>원격 설치 30분</h3><p>화면 공유로 파이썬 설치, 가상환경 생성, 개발환경 기본 세팅과 실행 확인을 진행합니다.</p><strong>49,000원</strong></article>
@@ -514,7 +516,7 @@
         <div class="qw-notice-box qw-scope-notice reveal reveal-delay-2">
           <strong>지원 범위</strong>
           <p>
-            질문권과 원격지원은 책자 내용, 파이썬 설치, 가상환경, 개발환경 세팅, 오류 화면 확인에 한정됩니다.
+            질문권과 원격지원은 전자책 내용, 파이썬 설치, 가상환경, 개발환경 세팅, 오류 화면 확인에 한정됩니다.
             개별 전략 개발, 수익성 검토, 종목 추천, 매수·매도 판단, 투자 상담은 포함하지 않습니다.
           </p>
         </div>
@@ -528,7 +530,7 @@
           <h2>직접 만들 시간이 없거나, 실전용으로 쓰고 싶다면 제작을 맡기세요</h2>
           <p>
             퀀트공방은 고객이 정한 매매 기준을 조건표로 정리한 뒤 알림, 기록, 주문 보조 프로그램으로 구현합니다.
-            처음부터 자동 주문을 권하지 않습니다. 알림과 모의운영으로 먼저 확인한 뒤 필요한 범위만 확장합니다.
+            처음부터 자동 주문을 권하지 않습니다. 알림과 모의운영으로 확인한 뒤 필요한 범위만 확장합니다.
           </p>
         </div>
 
@@ -541,8 +543,8 @@
 
         <div class="qw-notice-grid reveal reveal-delay-2">
           <div class="qw-notice-box qw-book-credit-notice">
-            <strong>책자 구매자 혜택</strong>
-            <p>책자 구매 후 30일 이내 제작 의뢰 시 책자 구매금액만큼 제작비에서 차감해드립니다. 단, 최대 차감 한도는 50,000원입니다.</p>
+            <strong>전자책 구매자 혜택</strong>
+            <p>전자책 구매 후 30일 이내 제작 의뢰 시 전자책 구매금액만큼 제작비에서 차감해드립니다. 단, 최대 차감 한도는 50,000원입니다.</p>
           </div>
           <div class="qw-future-scope-box">
             <h3>추후 제작 가능 항목</h3>
@@ -564,17 +566,17 @@
         <div class="mq-section-head reveal">
           <p class="mq-section-label">Pricing</p>
           <h2>가격 안내</h2>
-          <p>먼저 책자로 작게 시작하고, 필요한 경우 질문권·원격지원·제작 의뢰로 확장할 수 있습니다.</p>
+          <p>책으로 작게 시작하고, 필요한 경우 질문권·원격지원·제작 의뢰로 확장할 수 있습니다.</p>
         </div>
         <div class="qw-pricing-table-wrap reveal reveal-delay-1">
           <table class="qw-pricing-table">
             <thead><tr><th>구분</th><th>상품</th><th>가격</th><th>설명</th></tr></thead>
             <tbody>
-              <tr><td>책자</td><td>업비트 자동매매 PDF</td><td>19,000원부터</td><td>REST API·WebSocket 흐름 설명</td></tr>
-              <tr><td>책자</td><td>빗썸 자동매매 PDF</td><td>19,000원부터</td><td>REST API·WebSocket 흐름 설명</td></tr>
-              <tr><td>책자</td><td>한국투자증권 자동매매 PDF</td><td>29,000원부터</td><td>국내주식 API 자동화 흐름 설명</td></tr>
-              <tr><td>책자</td><td>키움증권 자동매매 PDF</td><td>29,000원부터</td><td>조건검색식·시세 감시 흐름 설명</td></tr>
-              <tr><td>지원</td><td>질문 1건</td><td>9,900원</td><td>책자 내용 관련 단문 질문</td></tr>
+              <tr><td>전자책</td><td>업비트 자동매매 PDF</td><td>19,000원부터</td><td>REST API·WebSocket 흐름 설명</td></tr>
+              <tr><td>전자책</td><td>빗썸 자동매매 PDF</td><td>19,000원부터</td><td>REST API·WebSocket 흐름 설명</td></tr>
+              <tr><td>전자책</td><td>한국투자증권 자동매매 PDF</td><td>29,000원부터</td><td>국내주식 API 자동화 흐름 설명</td></tr>
+              <tr><td>전자책</td><td>키움증권 자동매매 PDF</td><td>29,000원부터</td><td>조건검색식·시세 감시 흐름 설명</td></tr>
+              <tr><td>지원</td><td>질문 1건</td><td>9,900원</td><td>전자책 내용 관련 단문 질문</td></tr>
               <tr><td>지원</td><td>원격 설치 30분</td><td>49,000원</td><td>파이썬 설치·가상환경·개발환경 세팅</td></tr>
               <tr><td>제작</td><td>미니 알림 제작</td><td>190,000원부터</td><td>단일 조건 알림형</td></tr>
               <tr><td>제작</td><td>주문 보조형</td><td>590,000원부터</td><td>알림 후 사용자가 확인하고 주문</td></tr>
@@ -633,7 +635,7 @@
         <div class="qw-risk-summary-box reveal">
           <h2>투자 수익을 보장하지 않습니다</h2>
           <p>
-            퀀트공방의 책자, 질문 지원, 제작 서비스는 고객이 정한 기준을
+            퀀트공방의 전자책, 질문 지원, 제작 서비스는 고객이 정한 기준을
             더 일관되게 확인하고 기록하도록 돕는 교육·소프트웨어 제작 서비스입니다.
           </p>
           <ul>
@@ -651,7 +653,7 @@
       <div class="mq-container mq-faq-grid">
         <aside class="mq-faq-side reveal">
           <p class="mq-section-label">자주 묻는 질문</p>
-          <h2>책자 구매 전,<br />이것만 확인하세요</h2>
+          <h2>전자책 구매 전,<br />이것만 확인하세요</h2>
           <p>
             구매 신청, 입금 안내, 질문 지원, 제작 의뢰 흐름을 미리 확인하면
             더 편하게 시작할 수 있습니다.
@@ -659,18 +661,36 @@
         </aside>
 
         <div class="faq-list mq-faq-list reveal reveal-delay-1">
-          <div class="faq-category-label">책자 구매</div>
+          <div class="faq-category-label">전자책 구매</div>
           <article class="faq-item">
-            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a1">입금하면 언제 받을 수 있나요?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-content" id="faq-a1"><p>안내받은 방법으로 입금하시면 입력하신 이메일로 PDF 또는 다운로드 링크를 보내드립니다. 수동 확인 방식이므로 즉시 발송이 아닐 수 있습니다. 늦어도 다음날까지 발송하는 것을 원칙으로 합니다.</p></div>
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a1">구매 절차는 어떻게 진행되나요?<span class="faq-icon" aria-hidden="true">+</span></button>
+            <div class="faq-content" id="faq-a1">
+              <p>구매 신청을 남겨주시면 확인 후 입금 계좌와 진행 방법을 안내드립니다.</p>
+              <p>
+                입금 내역 확인 후 입력하신 이메일로
+                PDF 가이드 또는 다운로드 링크를 발송드리며,
+                자료 발송이 완료되면 별도 안내드립니다.
+              </p>
+              <p>입금자명과 신청자명이 다를 경우 확인이 늦어질 수 있습니다.</p>
+            </div>
           </article>
           <article class="faq-item">
-            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a2">파일은 어떤 형식인가요?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-content" id="faq-a2"><p>상품은 PDF 전자책 자료로만 제공됩니다. 별도의 실습 파일은 제공하지 않습니다.</p></div>
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a2">입금하면 언제 받을 수 있나요?<span class="faq-icon" aria-hidden="true">+</span></button>
+            <div class="faq-content" id="faq-a2">
+              <p>
+                입금 후 구매 신청 정보와 입금 내역이 확인되면,
+                입력하신 이메일로 PDF 가이드 또는 다운로드 링크를 발송드립니다.
+              </p>
+              <p>
+                대부분 당일 발송되며,
+                늦어도 다음날까지 받아보실 수 있습니다.
+              </p>
+              <p>※ 입금자명과 신청자명이 다를 경우 확인이 늦어질 수 있습니다.</p>
+            </div>
           </article>
           <article class="faq-item">
-            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a3">카드결제는 안 되나요?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-content" id="faq-a3"><p>현재는 구매 신청 후 개별 입금 안내와 이메일 발송 방식으로 운영합니다. 카드결제와 즉시 다운로드는 추후 백엔드 구축 후 검토합니다.</p></div>
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a3">파일은 어떤 형식인가요?<span class="faq-icon" aria-hidden="true">+</span></button>
+            <div class="faq-content" id="faq-a3"><p>상품은 PDF 전자책 자료로만 제공됩니다. 별도의 실습 파일은 제공하지 않습니다.</p></div>
           </article>
 
           <div class="faq-category-label">학습·지원</div>
@@ -679,12 +699,12 @@
             <div class="faq-content" id="faq-a4"><p>기초 설명부터 제공하지만 파이썬 설치, 가상환경 구성, 개발환경 세팅과 파일 실행 과정은 필요합니다. 완전 초보자는 원격 설치 지원 또는 제작 의뢰를 이용할 수 있습니다.</p></div>
           </article>
           <article class="faq-item">
-            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a5">책자를 보고 따라 했는데 안 됩니다.<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-content" id="faq-a5"><p>오류 화면을 캡처해서 문의해 주세요. 책자 관련 기본 질문은 질문권 또는 원격 지원으로 도와드립니다. 단, 개별 전략 개발이나 투자 판단은 포함하지 않습니다.</p></div>
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a5">전자책을 보고 따라 했는데 안 됩니다.<span class="faq-icon" aria-hidden="true">+</span></button>
+            <div class="faq-content" id="faq-a5"><p>오류 화면을 캡처해서 문의해 주세요. 전자책 관련 기본 질문은 질문권 또는 원격 지원으로 도와드립니다. 단, 개별 전략 개발이나 투자 판단은 포함하지 않습니다.</p></div>
           </article>
           <article class="faq-item">
-            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a6">책자는 어떤 종류가 있나요?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-content" id="faq-a6"><p>업비트, 빗썸, 한국투자증권, 키움증권 자동매매 책자를 기준으로 안내합니다. 각 책자는 REST API와 WebSocket 또는 조건검색식 흐름을 플랫폼별로 나누어 설명합니다.</p></div>
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a6">전자책은 어떤 종류가 있나요?<span class="faq-icon" aria-hidden="true">+</span></button>
+            <div class="faq-content" id="faq-a6"><p>업비트, 빗썸, 한국투자증권, 키움증권 자동매매 전자책을 기준으로 안내합니다. 각 전자책은 REST API와 WebSocket 또는 조건검색식 흐름을 플랫폼별로 나누어 설명합니다.</p></div>
           </article>
 
           <div class="faq-category-label">환불·위험</div>
@@ -697,12 +717,12 @@
             <div class="faq-content" id="faq-a8"><p><strong>수익을 보장하지 않습니다.</strong> 퀀트공방은 고객이 정한 기준을 프로그램으로 구현하거나 직접 제작할 수 있도록 돕는 서비스입니다. 실제 투자 판단과 결과는 이용자 본인의 책임입니다.</p></div>
           </article>
           <article class="faq-item">
-            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a9">제작을 맡기면 책자 구매금액은 차감되나요?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-content" id="faq-a9"><p>책자 구매 후 30일 이내 제작 의뢰 시 책자 구매금액만큼 제작비에서 차감해드립니다. 단, 최대 차감 한도는 50,000원입니다.</p></div>
+            <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a9">제작을 맡기면 전자책 구매금액은 차감되나요?<span class="faq-icon" aria-hidden="true">+</span></button>
+            <div class="faq-content" id="faq-a9"><p>전자책 구매 후 30일 이내 제작 의뢰 시 전자책 구매금액만큼 제작비에서 차감해드립니다. 단, 최대 차감 한도는 50,000원입니다.</p></div>
           </article>
           <article class="faq-item">
             <button class="faq-trigger" type="button" aria-expanded="false" aria-controls="faq-a10">API 키를 보내야 하나요?<span class="faq-icon" aria-hidden="true">+</span></button>
-            <div class="faq-content" id="faq-a10"><p>책자 구매에는 API 키가 필요하지 않습니다. 제작 또는 원격지원 과정에서도 API 키는 이용자 직접 관리와 출금 권한 없는 키 사용을 원칙으로 합니다.</p></div>
+            <div class="faq-content" id="faq-a10"><p>전자책 구매에는 API 키가 필요하지 않습니다. 제작 또는 원격지원 과정에서도 API 키는 이용자 직접 관리와 출금 권한 없는 키 사용을 원칙으로 합니다.</p></div>
           </article>
         </div>
       </div>
@@ -715,7 +735,7 @@
             <p class="mq-section-label">문의</p>
             <h2>구매 전 궁금한 점이 있으면 문의하세요</h2>
             <p>
-              책자 구매, 입금 확인, 질문권, 제작 의뢰 가능 여부를 이메일 또는 카카오톡으로 문의할 수 있습니다.
+              전자책 구매, 입금 확인, 질문권, 제작 의뢰 가능 여부를 이메일 또는 카카오톡으로 문의할 수 있습니다.
             </p>
           </div>
           <div class="qw-contact-actions">
@@ -740,12 +760,12 @@
           </span>
         </a>
         <p class="footer-description">
-          업비트·빗썸·한국투자증권·키움증권 자동매매를 PDF 책자로 먼저 이해할 수 있게 돕고,
+          업비트·빗썸·한국투자증권·키움증권 자동매매를 PDF 책으로 이해할 수 있게 돕고,
           필요한 경우 질문 지원과 맞춤 제작을 제공합니다.
         </p>
       </div>
       <nav class="mq-footer-links" aria-label="푸터 링크">
-        <a href="#books">책자 구매</a>
+        <a href="#books">전자책 구매</a>
         <a href="#purchase-flow">구매 방법</a>
         <a href="#support">질문·지원</a>
         <a href="#custom-build">제작 의뢰</a>
@@ -769,7 +789,7 @@
   </footer>
 
   <div class="mobile-sticky-cta" aria-label="빠른 이동">
-    <a href="#books">책자 구매</a>
+    <a href="#books">전자책 구매</a>
     <a href="#custom-build">제작 문의</a>
   </div>
 

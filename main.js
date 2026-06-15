@@ -268,7 +268,7 @@
 
     let complexity, product, duration;
 	    if (count === 0) {
-	      complexity = '먼저 어떤 투자 기준을 조건표로 만들지 정합니다';
+	      complexity = '어떤 투자 기준을 조건표로 만들지 정합니다';
 	      product    = '기준 정리부터 시작';
 	      duration   = '기준 정리부터 시작';
 	    } else if (hasOrder) {
@@ -280,15 +280,15 @@
 	      product    = `${scopeLabel} 위험관리 + 사전 점검`;
 	      duration   = '위험 기준 확정 후 점검';
 	    } else if (hasRisk) {
-	      complexity = '보유 종목, 손절선, 일일 손실한도 같은 제한 기준을 먼저 정합니다';
+	      complexity = '보유 종목, 손절선, 일일 손실한도 같은 제한 기준을 정합니다';
 	      product    = `${scopeLabel} 위험관리 구성`;
 	      duration   = '위험관리 범위 검토';
 	    } else if (hasVerify) {
-	      complexity = '과거 데이터와 모의운영으로 기준 특성을 먼저 확인합니다';
+	      complexity = '과거 데이터와 모의운영으로 기준 특성을 확인합니다';
 	      product    = `${scopeLabel} 사전 점검 + 기록`;
 	      duration   = '점검 범위 검토';
 	    } else if (hasNotify) {
-	      complexity = '조건 감시와 알림 방식, 주문 전 확인 방식을 먼저 설계합니다';
+	      complexity = '조건 감시와 알림 방식, 주문 전 확인 방식을 설계합니다';
 	      product    = `${scopeLabel} 감시 + 알림`;
 	      duration   = '알림형 점검부터 시작';
 	    } else if (hasWatch) {
@@ -296,7 +296,7 @@
 	      product    = `${scopeLabel} 조건 감시`;
 	      duration   = '주문 없이 감시부터 시작';
     } else if (hasConnect) {
-      complexity = '연결 가능한 거래소나 증권사, 데이터 범위와 권한을 먼저 확인합니다';
+      complexity = '연결 가능한 거래소나 증권사, 데이터 범위와 권한을 확인합니다';
 	      product    = `${scopeLabel} 연결 가능성 확인`;
       duration   = '연결 가능성 진단';
     } else {
@@ -472,7 +472,7 @@
   function buildPurchaseEmailBody(formData) {
     const productPrice = Number(formData.productPrice || 0);
     return [
-      '[퀀트공방 책자 구매 신청]',
+      '[퀀트공방 전자책 구매 신청]',
       '',
       `구매 상품: ${formData.productName}`,
       `상품 금액: ${productPrice.toLocaleString('ko-KR')}원`,
@@ -506,7 +506,7 @@
       if (targetOption) {
         purchaseProduct.value = targetOption.value;
         purchaseProduct.dispatchEvent(new Event('change'));
-        showToast(`${product} 상품을 선택했습니다`, '책자');
+        showToast(`${product} 상품을 선택했습니다`, '전자책');
       }
     });
   });
@@ -516,7 +516,7 @@
     if (!purchaseForm.reportValidity()) return;
 
     const formData = getPurchaseFormData(purchaseForm);
-    const subject = `[퀀트공방] 책자 구매 신청 - ${formData.productName} / ${formData.buyerName}`;
+    const subject = `[퀀트공방] 전자책 구매 신청 - ${formData.productName} / ${formData.buyerName}`;
     const body = buildPurchaseEmailBody(formData);
     openEmailCompose({ subject, body, toastTitle: '구매' });
   });
@@ -863,7 +863,7 @@
     ['RSI 반등', 'RSI가 반등하'],
     ['볼린저밴드 하단 반등', '볼린저밴드 하단에서 반등하'],
     ['외국인/기관 매수 동반', '외국인과 기관의 매수가 함께 들어오'],
-    ['절반 매수', '정해 둔 조건에서 절반만 먼저 매수하']
+    ['절반 매수', '정해 둔 조건에서 절반만 매수하']
   ]);
 
   const sellConditionStems = new Map([
@@ -992,7 +992,7 @@
       '',
       `거래 시장: ${formData.get('market') || '미선택'}`,
       `거래 환경: ${formData.get('platform') || '미선택'}`,
-      `가장 먼저 필요한 것: ${formData.get('primaryGoal') || '미선택'}`,
+      `가장 필요한 것: ${formData.get('primaryGoal') || '미선택'}`,
       `보고 싶은 종목: ${formData.get('watchlist') || '무료진단 시 설명 예정'}`,
       `자동 정리 문장: ${formData.get('conditionSummary') || '무료진단 시 설명 예정'}`,
       '',
@@ -1089,7 +1089,7 @@
     showToast('제작 가능 여부 확인 섹션으로 이동합니다', '의뢰');
   });
   document.getElementById('nav-cta-btn')?.addEventListener('click', () => {
-    showToast('책자 구매 신청으로 이동합니다', '구매');
+    showToast('전자책 구매 신청으로 이동합니다', '구매');
   });
   document.getElementById('cta-email-btn')?.addEventListener('click', () => {
     showToast('Gmail 작성창을 엽니다. 내용을 확인한 뒤 전송 버튼을 눌러주세요.', '메일');
