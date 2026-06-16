@@ -12983,6 +12983,146 @@ html {
   box-shadow: 0 26px 80px rgba(15, 23, 42, 0.1);
 }
 
+.qw-ebook-sample-section {
+  background:
+    radial-gradient(circle at 84% 10%, rgba(37, 99, 235, 0.08), transparent 28%),
+    linear-gradient(180deg, #ffffff 0%, #f7faff 100%);
+  border-top: 1px solid rgba(191, 219, 254, 0.65);
+  border-bottom: 1px solid rgba(191, 219, 254, 0.72);
+}
+
+.qw-sample-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  max-width: 920px;
+  margin: -20px auto 30px;
+  padding: 20px 24px;
+  border: 1px solid rgba(253, 186, 116, 0.78);
+  border-radius: 22px;
+  background: linear-gradient(135deg, rgba(255, 247, 237, 0.88), rgba(239, 246, 255, 0.72));
+  color: #334155;
+  box-shadow: 0 16px 42px rgba(234, 88, 12, 0.08);
+}
+
+.qw-sample-notice-icon {
+  display: inline-grid;
+  align-self: center;
+  flex: 0 0 40px;
+  width: 40px;
+  height: 40px;
+  margin-top: 2px;
+  place-items: center;
+  border: 1px solid rgba(253, 186, 116, 0.86);
+  border-radius: 14px;
+  background: #fff7ed;
+  font-size: 22px;
+  line-height: 1;
+  animation: qwWarningBlink 1.25s ease-in-out infinite;
+}
+
+@keyframes qwWarningBlink {
+  0%, 100% {
+    background: #fff7ed;
+    box-shadow: 0 0 0 rgba(249, 115, 22, 0);
+    filter: brightness(1) saturate(1);
+    transform: scale(1);
+  }
+  50% {
+    background: #fed7aa;
+    box-shadow:
+      0 0 0 4px rgba(249, 115, 22, 0.14),
+      0 0 24px rgba(249, 115, 22, 0.46);
+    filter: brightness(1.08) saturate(1.35);
+    transform: scale(1.055);
+  }
+}
+
+.qw-sample-notice p {
+  margin: 0;
+  font-size: clamp(16px, 1.35vw, 19px);
+  font-weight: 760;
+  line-height: 1.72;
+  word-break: keep-all;
+}
+
+.qw-sample-notice strong {
+  display: block;
+  color: #0f172a;
+  font-weight: 950;
+}
+
+.qw-sample-notice span:not(.qw-sample-notice-icon) {
+  display: block;
+  margin-top: 4px;
+  color: #475569;
+  font-weight: 720;
+}
+
+.qw-ebook-sample-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: clamp(16px, 2vw, 22px);
+}
+
+.qw-ebook-sample-card {
+  display: flex;
+  min-width: 0;
+  flex-direction: column;
+  gap: 16px;
+  padding: clamp(16px, 1.8vw, 22px);
+  border: 1px solid rgba(191, 219, 254, 0.95);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 18px 46px rgba(15, 23, 42, 0.06);
+  transform-origin: center;
+  transition: transform 0.24s ease, box-shadow 0.24s ease, border-color 0.24s ease;
+}
+
+.qw-ebook-sample-card:hover {
+  border-color: rgba(147, 197, 253, 1);
+  box-shadow: 0 26px 64px rgba(37, 99, 235, 0.14);
+  transform: translateY(-5px) scale(1.025);
+}
+
+.qw-ebook-sample-card figure {
+  display: grid;
+  min-height: 210px;
+  margin: 0;
+  place-items: center;
+  overflow: hidden;
+  border: 1px solid rgba(219, 234, 254, 0.95);
+  border-radius: 18px;
+  background: linear-gradient(180deg, #f8fbff 0%, #ffffff 100%);
+}
+
+.qw-ebook-sample-card img {
+  display: block;
+  width: 100%;
+  max-height: 260px;
+  object-fit: contain;
+}
+
+.qw-ebook-sample-card h3 {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  margin: 0;
+  color: #0f172a;
+  font-size: clamp(17px, 1.25vw, 20px);
+  font-weight: 950;
+  line-height: 1.35;
+  text-align: center;
+  word-break: keep-all;
+}
+
+.qw-ebook-sample-card h3 span {
+  flex: 0 0 auto;
+  font-size: 1.02em;
+  line-height: 1;
+}
+
 .qw-chart-image-card {
   max-width: 980px;
 }
@@ -13617,11 +13757,20 @@ html {
     display: none;
     animation: none;
   }
+
+  .qw-ebook-sample-card,
+  .qw-sample-notice-icon,
+  .qw-ebook-sample-card:hover {
+    animation: none;
+    transition: none;
+    transform: none;
+  }
 }
 
 @media (max-width: 1180px) {
   .qw-book-grid,
-  .qw-build-package-grid {
+  .qw-build-package-grid,
+  .qw-ebook-sample-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -13724,6 +13873,44 @@ html {
   .qw-chart-image-card,
   .qw-guide-preview-media {
     border-radius: 20px;
+  }
+
+  .qw-ebook-sample-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .qw-sample-notice {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: -12px;
+    padding: 16px 18px;
+    text-align: left;
+  }
+
+  .qw-sample-notice-icon {
+    align-self: flex-start;
+    width: 36px;
+    height: 36px;
+    margin-top: 0;
+    font-size: 20px;
+  }
+
+  .qw-sample-notice p {
+    font-size: 15.5px;
+    line-height: 1.68;
+  }
+
+  .qw-ebook-sample-card {
+    border-radius: 20px;
+  }
+
+  .qw-ebook-sample-card figure {
+    min-height: 180px;
+    border-radius: 16px;
+  }
+
+  .qw-ebook-sample-card img {
+    max-height: 300px;
   }
 
   .qw-wide-image-card {
