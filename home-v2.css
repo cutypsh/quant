@@ -12917,6 +12917,7 @@ html {
   max-width: 1120px;
   margin: 28px auto 0;
   overflow: hidden;
+  position: relative;
   border: 1px solid rgba(191, 219, 254, 0.95);
   border-radius: 28px;
   background: rgba(255, 255, 255, 0.92);
@@ -12981,6 +12982,68 @@ html {
   border-radius: 30px;
   background: #fff;
   box-shadow: 0 26px 80px rgba(15, 23, 42, 0.1);
+}
+
+.qw-chart-breakout-pulse {
+  position: absolute;
+  top: 21.8%;
+  left: 59.2%;
+  z-index: 2;
+  display: inline-flex;
+  min-width: clamp(86px, 12.5vw, 126px);
+  min-height: clamp(28px, 4vw, 42px);
+  align-items: center;
+  justify-content: center;
+  padding: 0 clamp(12px, 1.8vw, 20px);
+  border-radius: 999px;
+  background: #0f172a;
+  color: #ffffff;
+  font-size: clamp(11px, 1.35vw, 17px);
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1;
+  pointer-events: none;
+  transform: translate(-50%, -50%);
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.22);
+  animation: qwBreakoutPulse 1.7s ease-in-out infinite;
+}
+
+.qw-chart-breakout-pulse::after {
+  content: "";
+  position: absolute;
+  inset: -7px;
+  border: 1px solid rgba(37, 99, 235, 0.28);
+  border-radius: inherit;
+  opacity: 0;
+  transform: scale(0.94);
+  animation: qwBreakoutHalo 1.7s ease-in-out infinite;
+}
+
+@keyframes qwBreakoutPulse {
+  0%, 100% {
+    box-shadow: 0 12px 26px rgba(15, 23, 42, 0.22);
+    filter: brightness(1);
+    transform: translate(-50%, -50%) scale(1);
+  }
+  50% {
+    box-shadow:
+      0 0 0 6px rgba(37, 99, 235, 0.13),
+      0 18px 36px rgba(15, 23, 42, 0.3);
+    filter: brightness(1.08);
+    transform: translate(-50%, -50%) scale(1.075);
+  }
+}
+
+@keyframes qwBreakoutHalo {
+  0%, 100% {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+
+  50% {
+    opacity: 1;
+    transform: scale(1.08);
+  }
 }
 
 .qw-ebook-sample-section {
@@ -13451,6 +13514,10 @@ html {
   margin-bottom: 16px;
 }
 
+.qw-purchase-form .form-actions .mq-btn {
+  flex: 1 1 190px;
+}
+
 .qw-agreement-box {
   display: grid;
   gap: 10px;
@@ -13579,6 +13646,10 @@ html {
 
 .qw-operator-photo {
   margin: 0;
+  display: flex;
+  justify-self: center;
+  align-self: center;
+  justify-content: center;
   text-align: center;
 }
 
@@ -13591,24 +13662,6 @@ html {
   border: 1px solid #dbeafe;
   border-radius: 18px;
   background: #fff;
-}
-
-.qw-operator-photo figcaption {
-  display: grid;
-  gap: 4px;
-  margin-top: 12px;
-}
-
-.qw-operator-photo strong {
-  color: #0f172a;
-  font-size: 18px;
-  font-weight: 950;
-}
-
-.qw-operator-photo span {
-  color: #64748b;
-  font-size: 14px;
-  font-weight: 800;
 }
 
 .qw-operator-point-grid {
@@ -13765,6 +13818,16 @@ html {
     transition: none;
     transform: none;
   }
+
+  .qw-chart-breakout-pulse,
+  .qw-chart-breakout-pulse::after {
+    animation: none;
+    filter: none;
+  }
+
+  .qw-chart-breakout-pulse {
+    transform: translate(-50%, -50%);
+  }
 }
 
 @media (max-width: 1180px) {
@@ -13873,6 +13936,19 @@ html {
   .qw-chart-image-card,
   .qw-guide-preview-media {
     border-radius: 20px;
+  }
+
+  .qw-chart-breakout-pulse {
+    top: 21.8%;
+    left: 59.2%;
+    min-width: clamp(72px, 22vw, 104px);
+    min-height: clamp(24px, 7vw, 34px);
+    padding: 0 10px;
+    font-size: clamp(9px, 3vw, 13px);
+  }
+
+  .qw-chart-breakout-pulse::after {
+    inset: -5px;
   }
 
   .qw-ebook-sample-grid {
